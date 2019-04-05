@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:clean_architecture_flutter_bloc/counter_widget.dart' show MyApp;
-import 'package:clean_architecture_flutter_bloc/counter_bloc.dart' show CounterBloc;
+import 'package:clean_architecture_flutter_bloc/counter_bloc.dart'
+    show CounterBloc;
+import 'package:clean_architecture_flutter_bloc/counter_repo.dart'
+    show CounterRepoImp;
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp(CounterBloc()));
+    await tester.pumpWidget(MyApp(CounterBloc(CounterRepoImp())));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
