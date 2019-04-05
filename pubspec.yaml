@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
+  rxdart: ^0.21.0
   perfectionist: ^2.0.0
   flutter_test:
     sdk: flutter
